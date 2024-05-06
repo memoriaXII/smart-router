@@ -14,6 +14,7 @@ import { CurrencyAmount } from '.';
 export const routeToString = (
   route: V3Route | V2Route | MixedRoute
 ): string => {
+  console.log(4444444444)
   const routeStr = [];
   const tokens =
     route.protocol === Protocol.V3
@@ -25,6 +26,7 @@ export const routeToString = (
     route.protocol === Protocol.V3 || route.protocol === Protocol.MIXED
       ? route.pools
       : route.pairs;
+      console.log(4444444444,pools) //少chainId ？
   const poolFeePath = _.map(pools, (pool) => {
     return `${
       pool instanceof Pool
@@ -33,7 +35,7 @@ export const routeToString = (
             pool.token1,
             pool.fee,
             undefined,
-            V3_CORE_FACTORY_ADDRESSES[pool.chainId]
+            pool.chainId?V3_CORE_FACTORY_ADDRESSES[pool.chainId]:V3_CORE_FACTORY_ADDRESSES[pool.token0?.chainId]
           )}]`
         : ` -- [${Pair.getAddress(
             (pool as Pair).token0,
@@ -41,7 +43,7 @@ export const routeToString = (
           )}]`
     } --> `;
   });
-
+  console.log(555555555,poolFeePath)
   for (let i = 0; i < tokenPath.length; i++) {
     routeStr.push(tokenPath[i]);
     if (i < poolFeePath.length) {

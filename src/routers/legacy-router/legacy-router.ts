@@ -101,7 +101,7 @@ export class LegacyRouter {
     const tokenIn = currencyIn.wrapped;
     const tokenOut = currencyOut.wrapped;
     const routes = await this.getAllRoutes(tokenIn, tokenOut, routingConfig);
-    console.log(routes, 'routingConfig');
+    console.log('routingConfig',routes);
     const routeQuote = await this.findBestRouteExactIn(
       amountIn,
       tokenOut,
@@ -157,6 +157,7 @@ export class LegacyRouter {
     const tokenIn = currencyIn.wrapped;
     const tokenOut = currencyOut.wrapped;
     const routes = await this.getAllRoutes(tokenIn, tokenOut, routingConfig);
+    console.log('routeExactOut',routes)
     const routeQuote = await this.findBestRouteExactOut(
       amountOut,
       tokenIn,
@@ -208,7 +209,7 @@ export class LegacyRouter {
     routes: V3Route[],
     routingConfig?: LegacyRoutingConfig
   ): Promise<V3RouteWithValidQuote | null> {
-    console.log(routes, 'routes-shit');
+    // console.log(routes, 'routes-shit');
     const { routesWithQuotes: quotesRaw } =
       await this.quoteProvider.getQuotesManyExactIn<V3Route>(
         [amountIn],
@@ -345,7 +346,9 @@ export class LegacyRouter {
     const poolAccessor = await this.poolProvider.getPools(tokenPairs, {
       blockNumber: routingConfig?.blockNumber,
     });
+    
     const pools = poolAccessor.getAllPools();
+    // console.log(11111111,pools)
     //TODO: it doesnt get any pools back
 
     const routes: V3Route[] = this.computeAllRoutes(
@@ -358,12 +361,12 @@ export class LegacyRouter {
       tokenIn,
       MAX_HOPS
     );
-
-    log.info(
-      { routes: _.map(routes, routeToString) },
-      `Computed ${routes.length} possible routes.`
-    );
-
+    console.log(222222,routes)
+    // log.info(
+    //   { routes: _.map(routes, routeToString) },
+    //   `Computed ${routes.length} possible routes.`
+    // );
+    console.log(3333333,routes)
     return routes;
   }
 
@@ -466,7 +469,7 @@ export class LegacyRouter {
         );
       }
     }
-
+    // console.log('computeAllRoutes',allPaths)
     return allPaths;
   }
 
