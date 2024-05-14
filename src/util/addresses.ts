@@ -3,8 +3,8 @@ import {
   ChainId,
   SWAP_ROUTER_02_ADDRESSES as SWAP_ROUTER_02_ADDRESSES_HELPER,
   Token,
-} from '@uniswap/sdk-core';
-import { FACTORY_ADDRESS } from '@uniswap/v3-sdk';
+} from '@novaswap/sdk-core';
+import { FACTORY_ADDRESS } from '@novaswap/v3-sdk';
 
 import { NETWORKS_WITH_SAME_UNISWAP_ADDRESSES } from './chains';
 
@@ -86,9 +86,9 @@ export const NEW_QUOTER_V2_ADDRESSES: AddressMap = {
 
 export const MIXED_ROUTE_QUOTER_V1_ADDRESSES: AddressMap = {
   [ChainId.MAINNET]:
-    CHAIN_TO_ADDRESSES_MAP[ChainId.MAINNET].v1MixedRouteQuoterAddress,
+    CHAIN_TO_ADDRESSES_MAP[ChainId.NOVA_SEPOLIA].v1MixedRouteQuoterAddress,
   [ChainId.GOERLI]:
-    CHAIN_TO_ADDRESSES_MAP[ChainId.GOERLI].v1MixedRouteQuoterAddress,
+    CHAIN_TO_ADDRESSES_MAP[ChainId.NOVA_SEPOLIA].v1MixedRouteQuoterAddress,
 };
 
 export const UNISWAP_MULTICALL_ADDRESSES: AddressMap = {

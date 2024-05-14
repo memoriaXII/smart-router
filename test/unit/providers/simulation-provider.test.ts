@@ -1,6 +1,6 @@
 import { JsonRpcProvider } from '@ethersproject/providers';
-import { Trade } from '@uniswap/router-sdk';
-import { ChainId, Percent, TradeType } from '@uniswap/sdk-core';
+import { Trade } from '@novaswap/router-sdk';
+import { ChainId, Percent, TradeType } from '@novaswap/sdk-core';
 import { BigNumber } from 'ethers';
 import sinon from 'sinon';
 import {

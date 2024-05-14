@@ -1,6 +1,6 @@
 import { BigNumber } from '@ethersproject/bignumber';
-import { Protocol } from '@uniswap/router-sdk';
-import { ChainId, TradeType } from '@uniswap/sdk-core';
+import { Protocol } from '@novaswap/router-sdk';
+import { ChainId, TradeType } from '@novaswap/sdk-core';
 import {
   DAI_MAINNET,
   USDC_MAINNET,

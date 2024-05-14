@@ -1,5 +1,5 @@
-import { Pair } from '@uniswap/v2-sdk';
-import { encodeSqrtRatioX96, FeeAmount, Pool } from '@uniswap/v3-sdk';
+import { Pair } from '@novaswap/v2-sdk';
+import { encodeSqrtRatioX96, FeeAmount, Pool } from '@novaswap/v3-sdk';
 import {
   CurrencyAmount,
   DAI_MAINNET as DAI,
@@ -11,7 +11,7 @@ import {
 import {
   computeAllMixedRoutes,
   computeAllV2Routes,
-  computeAllV3Routes
+  computeAllV3Routes,
 } from '../../../../../src/routers/alpha-router/functions/compute-all-routes';
 import {
   DAI_USDT,
@@ -62,10 +62,19 @@ describe('compute all v3 routes', () => {
       WETH9_USDT_LOW,
       DAI_USDT_LOW,
     ];
-    const routes = computeAllV3Routes(USDC, WRAPPED_NATIVE_CURRENCY[1]!, pools, 4);
+    const routes = computeAllV3Routes(
+      USDC,
+      WRAPPED_NATIVE_CURRENCY[1]!,
+      pools,
+      4
+    );
 
     routes.forEach((route) => {
-      expect(route.pools).not.toEqual([USDC_DAI_MEDIUM, USDC_DAI_LOW, USDC_WETH_LOW]);
+      expect(route.pools).not.toEqual([
+        USDC_DAI_MEDIUM,
+        USDC_DAI_LOW,
+        USDC_WETH_LOW,
+      ]);
     });
     expect(routes).toHaveLength(3);
   });
@@ -157,14 +166,27 @@ describe('compute all mixed routes', () => {
       WETH9_USDT_LOW,
       DAI_USDT_LOW,
     ];
-    const routes = computeAllMixedRoutes(USDC, WRAPPED_NATIVE_CURRENCY[1]!, pools, 4);
+    const routes = computeAllMixedRoutes(
+      USDC,
+      WRAPPED_NATIVE_CURRENCY[1]!,
+      pools,
+      4
+    );
 
     routes.forEach((route) => {
       expect(route.pools).not.toEqual([USDC_DAI, USDC_DAI_LOW, USDC_WETH]);
       expect(route.pools).not.toEqual([USDC_DAI, USDC_DAI_MEDIUM, USDC_WETH]);
-      expect(route.pools).not.toEqual([USDC_DAI_LOW, USDC_DAI_MEDIUM, USDC_WETH]);
+      expect(route.pools).not.toEqual([
+        USDC_DAI_LOW,
+        USDC_DAI_MEDIUM,
+        USDC_WETH,
+      ]);
       expect(route.pools).not.toEqual([USDC_DAI_LOW, USDC_DAI, USDC_WETH]);
-      expect(route.pools).not.toEqual([USDC_DAI_MEDIUM, USDC_DAI_LOW, USDC_WETH]);
+      expect(route.pools).not.toEqual([
+        USDC_DAI_MEDIUM,
+        USDC_DAI_LOW,
+        USDC_WETH,
+      ]);
       expect(route.pools).not.toEqual([USDC_DAI_MEDIUM, USDC_DAI, USDC_WETH]);
     });
 
@@ -208,12 +230,34 @@ describe('compute all v2 routes', () => {
   });
 
   test('succeeds to compute all routes with 5 hops. ignoring arbitrage opportunities', async () => {
-    const pools = [DAI_USDT, USDC_DAI, USDC_USDT, USDC_WETH, WETH_USDT, WBTC_WETH];
-    const routes = computeAllV2Routes(USDC, WRAPPED_NATIVE_CURRENCY[1]!, pools, 5);
+    const pools = [
+      DAI_USDT,
+      USDC_DAI,
+      USDC_USDT,
+      USDC_WETH,
+      WETH_USDT,
+      WBTC_WETH,
+    ];
+    const routes = computeAllV2Routes(
+      USDC,
+      WRAPPED_NATIVE_CURRENCY[1]!,
+      pools,
+      5
+    );
 
     routes.forEach((route) => {
-      expect(route.pairs).not.toEqual([USDC_USDT, DAI_USDT, USDC_DAI, USDC_WETH]);
-      expect(route.pairs).not.toEqual([USDC_DAI, DAI_USDT, USDC_USDT, USDC_WETH]);
+      expect(route.pairs).not.toEqual([
+        USDC_USDT,
+        DAI_USDT,
+        USDC_DAI,
+        USDC_WETH,
+      ]);
+      expect(route.pairs).not.toEqual([
+        USDC_DAI,
+        DAI_USDT,
+        USDC_USDT,
+        USDC_WETH,
+      ]);
     });
     expect(routes).toHaveLength(3);
   });

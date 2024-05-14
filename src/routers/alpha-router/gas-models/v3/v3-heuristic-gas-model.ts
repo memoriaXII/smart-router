@@ -1,6 +1,7 @@
 import { BigNumber } from '@ethersproject/bignumber';
-import { ChainId, Price } from '@uniswap/sdk-core';
-import { Pool } from '@uniswap/v3-sdk';
+import { BaseProvider } from '@ethersproject/providers';
+import { ChainId, Price } from '@novaswap/sdk-core';
+import { Pool } from '@novaswap/v3-sdk';
 import _ from 'lodash';
 
 import { WRAPPED_NATIVE_CURRENCY } from '../../../..';
@@ -24,7 +25,6 @@ import {
   SINGLE_HOP_OVERHEAD,
   TOKEN_OVERHEAD,
 } from './gas-costs';
-import { BaseProvider } from '@ethersproject/providers';
 
 /**
  * Computes a gas estimate for a V3 swap using heuristics.

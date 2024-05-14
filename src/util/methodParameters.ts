@@ -3,14 +3,14 @@ import {
   Protocol,
   SwapRouter as SwapRouter02,
   Trade,
-} from '@uniswap/router-sdk';
-import { ChainId, Currency, TradeType } from '@uniswap/sdk-core';
+} from '@novaswap/router-sdk';
+import { ChainId, Currency, TradeType } from '@novaswap/sdk-core';
 import {
-  SwapRouter as UniversalRouter,
   UNIVERSAL_ROUTER_ADDRESS,
-} from '@uniswap/universal-router-sdk';
-import { Route as V2RouteRaw } from '@uniswap/v2-sdk';
-import { Route as V3RouteRaw } from '@uniswap/v3-sdk';
+  SwapRouter as UniversalRouter,
+} from '@novaswap/universal-router-sdk';
+import { Route as V3RouteRaw } from '@novaswap/v3-sdk';
+import { Route as V2RouteRaw } from '@novaswap/v2-sdk';
 import _ from 'lodash';
 
 import {
@@ -18,9 +18,9 @@ import {
   MethodParameters,
   MixedRouteWithValidQuote,
   RouteWithValidQuote,
+  SWAP_ROUTER_02_ADDRESSES,
   SwapOptions,
   SwapType,
-  SWAP_ROUTER_02_ADDRESSES,
   V2RouteWithValidQuote,
   V3RouteWithValidQuote,
 } from '..';

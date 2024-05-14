@@ -1,8 +1,8 @@
 import { BigNumber } from '@ethersproject/bignumber';
 import { Logger } from '@ethersproject/logger';
-import { SwapRouter, Trade } from '@uniswap/router-sdk';
-import { ChainId, Currency, Token, TradeType } from '@uniswap/sdk-core';
-import { FeeAmount, MethodParameters, Pool, Route } from '@uniswap/v3-sdk';
+import { SwapRouter, Trade } from '@novaswap/router-sdk';
+import { ChainId, Currency, Token, TradeType } from '@novaswap/sdk-core';
+import { FeeAmount, MethodParameters, Pool, Route } from '@novaswap/v3-sdk';
 import _ from 'lodash';
 
 import { IOnChainQuoteProvider, RouteWithQuotes } from '../../providers';
@@ -101,7 +101,7 @@ export class LegacyRouter {
     const tokenIn = currencyIn.wrapped;
     const tokenOut = currencyOut.wrapped;
     const routes = await this.getAllRoutes(tokenIn, tokenOut, routingConfig);
-    console.log('routingConfig',routes);
+    console.log('routingConfig', routes);
     const routeQuote = await this.findBestRouteExactIn(
       amountIn,
       tokenOut,
@@ -157,7 +157,7 @@ export class LegacyRouter {
     const tokenIn = currencyIn.wrapped;
     const tokenOut = currencyOut.wrapped;
     const routes = await this.getAllRoutes(tokenIn, tokenOut, routingConfig);
-    console.log('routeExactOut',routes)
+    console.log('routeExactOut', routes);
     const routeQuote = await this.findBestRouteExactOut(
       amountOut,
       tokenIn,
@@ -346,7 +346,7 @@ export class LegacyRouter {
     const poolAccessor = await this.poolProvider.getPools(tokenPairs, {
       blockNumber: routingConfig?.blockNumber,
     });
-    
+
     const pools = poolAccessor.getAllPools();
     // console.log(11111111,pools)
     //TODO: it doesnt get any pools back
@@ -361,12 +361,12 @@ export class LegacyRouter {
       tokenIn,
       MAX_HOPS
     );
-    console.log(222222,routes)
+    console.log(222222, routes);
     // log.info(
     //   { routes: _.map(routes, routeToString) },
     //   `Computed ${routes.length} possible routes.`
     // );
-    console.log(3333333,routes)
+    console.log(3333333, routes);
     return routes;
   }
 

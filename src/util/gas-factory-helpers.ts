@@ -1,10 +1,10 @@
 import { estimateL1Gas, estimateL1GasCost } from '@eth-optimism/sdk';
 import { BigNumber } from '@ethersproject/bignumber';
 import { BaseProvider, TransactionRequest } from '@ethersproject/providers';
-import { Protocol } from '@uniswap/router-sdk';
-import { ChainId, Percent, Token, TradeType } from '@uniswap/sdk-core';
-import { Pair } from '@uniswap/v2-sdk';
-import { FeeAmount, Pool } from '@uniswap/v3-sdk';
+import { Protocol } from '@novaswap/router-sdk';
+import { ChainId, Percent, Token, TradeType } from '@novaswap/sdk-core';
+import { Pair } from '@novaswap/v2-sdk';
+import { FeeAmount, Pool } from '@novaswap/v3-sdk';
 import brotli from 'brotli';
 import JSBI from 'jsbi';
 import _ from 'lodash';

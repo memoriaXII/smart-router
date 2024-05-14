@@ -1,4 +1,4 @@
-import { ChainId, Token } from '@uniswap/sdk-core';
+import { ChainId, Token } from '@novaswap/sdk-core';
 import _ from 'lodash';
 
 import { log, WRAPPED_NATIVE_CURRENCY } from '../util';
@@ -55,7 +55,7 @@ import {
   WBTC_OPTIMISM_GOERLI,
   WBTC_OPTIMISM_SEPOLIA,
   WMATIC_POLYGON,
-  WMATIC_POLYGON_MUMBAI
+  WMATIC_POLYGON_MUMBAI,
 } from './token-provider';
 
 // These tokens will added to the Token cache on initialization.

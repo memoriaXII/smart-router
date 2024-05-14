@@ -1,8 +1,8 @@
 import { BigNumber } from '@ethersproject/bignumber';
-import { Protocol } from '@uniswap/router-sdk';
-import { ChainId, Currency, Token, TradeType } from '@uniswap/sdk-core';
-import { Pair } from '@uniswap/v2-sdk';
-import { Pool } from '@uniswap/v3-sdk';
+import { Protocol } from '@novaswap/router-sdk';
+import { ChainId, Currency, Token, TradeType } from '@novaswap/sdk-core';
+import { Pool } from '@novaswap/v3-sdk';
+import { Pair } from '@novaswap/v2-sdk';
 import _ from 'lodash';
 
 import {

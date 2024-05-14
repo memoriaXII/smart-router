@@ -1,5 +1,5 @@
-import { ChainId, Token } from '@uniswap/sdk-core';
-import { Pair } from '@uniswap/v2-sdk';
+import { ChainId, Token } from '@novaswap/sdk-core';
+import { Pair } from '@novaswap/v2-sdk';
 import _ from 'lodash';
 
 import { WRAPPED_NATIVE_CURRENCY } from '../../util/chains';
@@ -19,7 +19,8 @@ import {
   DAI_MOONBEAM,
   DAI_OPTIMISM,
   ETH_BNB,
-  OP_OPTIMISM, USDB_BLAST,
+  OP_OPTIMISM,
+  USDB_BLAST,
   USDC_ARBITRUM,
   USDC_AVAX,
   USDC_BASE,
@@ -38,7 +39,7 @@ import {
   WBTC_MOONBEAM,
   WBTC_OPTIMISM,
   WETH_POLYGON,
-  WMATIC_POLYGON
+  WMATIC_POLYGON,
 } from '../token-provider';
 
 import { IV2SubgraphProvider, V2SubgraphPool } from './subgraph-provider';

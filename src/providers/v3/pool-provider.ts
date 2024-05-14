@@ -1,13 +1,12 @@
 import { BigNumber } from '@ethersproject/bignumber';
-import { ChainId, Token } from '@uniswap/sdk-core';
-import { Pool } from '@uniswap/v3-sdk';
-//computePoolAddress,
+import { ChainId, Token } from '@novaswap/sdk-core';
+import { computePoolAddress, FeeAmount, Pool } from '@novaswap/v3-sdk';
 import retry, { Options as RetryOptions } from 'async-retry';
 import _ from 'lodash';
 
 import { IUniswapV3PoolState__factory } from '../../types/v3/factories/IUniswapV3PoolState__factory';
 import { V3_CORE_FACTORY_ADDRESSES } from '../../util/addresses';
-import { computePoolAddress, FeeAmount } from '../../util/create2';
+// import { FeeAmount } from '../../util/create2';
 import { log } from '../../util/log';
 import { poolToString } from '../../util/routes';
 import { IMulticallProvider, Result } from '../multicall-provider';
@@ -235,16 +234,6 @@ export class V3PoolProvider implements IV3PoolProvider {
       fee: feeAmount,
     });
     console.log('poolAddress', poolAddress);
-    //'0xd9aee73Ca27DBF61d70E9CAB097c9574D3E038be';
-    // computePoolAddress({
-    //   factoryAddress: V3_CORE_FACTORY_ADDRESSES[this.chainId]!,
-    //   tokenA: token0,
-    //   tokenB: token1,
-    //   fee: feeAmount,
-    // });
-    //'0x4ab628c8A2ad9b406bb2a36129f12A49783e2b16';
-
-    // console.log('poolAddress', poolAddress, token0, token1, feeAmount);
 
     this.POOL_ADDRESS_CACHE[cacheKey] = poolAddress;
 
