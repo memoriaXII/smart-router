@@ -9,8 +9,8 @@ import {
   UNIVERSAL_ROUTER_ADDRESS,
   SwapRouter as UniversalRouter,
 } from '@novaswap/universal-router-sdk';
-import { Route as V3RouteRaw } from '@novaswap/v3-sdk';
 import { Route as V2RouteRaw } from '@novaswap/v2-sdk';
+import { Route as V3RouteRaw } from '@novaswap/v3-sdk';
 import _ from 'lodash';
 
 import {
@@ -221,6 +221,14 @@ export function buildTrade<TTradeType extends TradeType>(
         outputAmount: quoteCurrency,
       };
     }
+  );
+  console.log(
+    'v2Routes',
+    v2Routes,
+    'v3Routes',
+    v3Routes,
+    'mixedRoutes',
+    mixedRoutes
   );
 
   const trade = new Trade({ v2Routes, v3Routes, mixedRoutes, tradeType });

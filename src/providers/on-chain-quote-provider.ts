@@ -328,7 +328,6 @@ export class OnChainQuoteProvider implements IOnChainQuoteProvider {
       ? MIXED_ROUTE_QUOTER_V1_ADDRESSES[this.chainId]
       : QUOTER_V2_ADDRESSES[this.chainId];
 
-    console.log(quoterAddress, 'quoterAddress');
     if (!quoterAddress) {
       throw new Error(
         `No address for the quoter contract on chain id: ${this.chainId}`

@@ -139,7 +139,6 @@ export async function getHighestLiquidityV3USDPool(
       ]);
     })
     .value();
-
   const poolAccessor = await poolProvider.getPools(usdPools, providerConfig);
 
   const pools = _([
@@ -164,7 +163,8 @@ export async function getHighestLiquidityV3USDPool(
     .value();
 
   if (pools.length == 0) {
-    const message = `Could not find a USD/${wrappedCurrency.symbol} pool for computing gas costs.`;
+    //TODO: This should be an error for gas costs
+    const message = `Could not find a USD/${wrappedCurrency.symbol}2 pool for computing gas costs.`;
     log.error({ pools }, message);
     throw new Error(message);
   }

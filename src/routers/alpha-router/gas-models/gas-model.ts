@@ -4,8 +4,8 @@ import {
   CurrencyAmount as CurrencyAmountRaw,
   Token,
 } from '@novaswap/sdk-core';
-import { Pool } from '@novaswap/v3-sdk';
 import { Pair } from '@novaswap/v2-sdk';
+import { Pool } from '@novaswap/v3-sdk';
 
 import { ProviderConfig } from '../../../providers/provider';
 import {
@@ -16,11 +16,13 @@ import {
   DAI_BNB,
   DAI_GOERLI,
   DAI_MAINNET,
+  DAI_NOVA_SEPOLIA,
   DAI_OPTIMISM,
   DAI_OPTIMISM_GOERLI,
   DAI_OPTIMISM_SEPOLIA,
   DAI_POLYGON_MUMBAI,
-  DAI_SEPOLIA, USDB_BLAST,
+  DAI_SEPOLIA,
+  USDB_BLAST,
   USDC_ARBITRUM,
   USDC_ARBITRUM_GOERLI,
   USDC_ARBITRUM_SEPOLIA,
@@ -39,6 +41,7 @@ import {
   USDC_NATIVE_CELO,
   USDC_NATIVE_OPTIMISM,
   USDC_NATIVE_POLYGON,
+  USDC_NOVA_SEPOLIA,
   USDC_OPTIMISM,
   USDC_OPTIMISM_GOERLI,
   USDC_OPTIMISM_SEPOLIA,
@@ -52,7 +55,7 @@ import {
   USDT_OPTIMISM,
   USDT_OPTIMISM_GOERLI,
   USDT_OPTIMISM_SEPOLIA,
-  WBTC_GOERLI
+  WBTC_GOERLI,
 } from '../../../providers/token-provider';
 import { IV2PoolProvider } from '../../../providers/v2/pool-provider';
 import {
@@ -114,6 +117,7 @@ export const usdGasTokensByChain: { [chainId in ChainId]?: Token[] } = {
   ],
   [ChainId.BASE]: [USDC_BASE, USDC_NATIVE_BASE],
   [ChainId.BLAST]: [USDB_BLAST],
+  [ChainId.NOVA_SEPOLIA]: [USDC_NOVA_SEPOLIA, DAI_NOVA_SEPOLIA],
 };
 
 export type L1ToL2GasCosts = {

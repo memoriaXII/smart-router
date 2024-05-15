@@ -245,7 +245,7 @@ export class V2HeuristicGasModelFactory extends IV2GasModelFactory {
           reserve0: pool?.reserve0.toExact(),
           reserve1: pool?.reserve1.toExact(),
         },
-        `Could not find a valid WETH pool with ${token.symbol} for computing gas costs.`
+        `Could not find a valid WETH pool with ${token.symbol}2 for computing gas costs.`
       );
 
       return null;
@@ -286,9 +286,9 @@ export class V2HeuristicGasModelFactory extends IV2GasModelFactory {
     if (pools.length == 0) {
       log.error(
         { pools },
-        `Could not find a USD/WETH pool for computing gas costs.`
+        `Could not find a USD/WETH2 pool for computing gas costs.`
       );
-      throw new Error(`Can't find USD/WETH pool for computing gas costs.`);
+      throw new Error(`Can't find USD/WETH2 pool for computing gas costs.`);
     }
 
     const maxPool = _.maxBy(pools, (pool) => {

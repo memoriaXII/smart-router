@@ -25,6 +25,7 @@ import {
   DAI_BNB,
   DAI_MAINNET,
   DAI_MOONBEAM,
+  DAI_NOVA_SEPOLIA,
   DAI_OPTIMISM,
   DAI_OPTIMISM_GOERLI,
   DAI_POLYGON_MUMBAI,
@@ -40,6 +41,7 @@ import {
   USDC_ETHEREUM_GNOSIS,
   USDC_MAINNET,
   USDC_MOONBEAM,
+  USDC_NOVA_SEPOLIA,
   USDC_OPTIMISM,
   USDC_OPTIMISM_GOERLI,
   USDC_POLYGON,
@@ -187,6 +189,7 @@ const baseTokensByChain: { [chainId in ChainId]?: Token[] } = {
   [ChainId.AVALANCHE]: [DAI_AVAX, USDC_AVAX],
   [ChainId.BASE]: [USDC_BASE],
   [ChainId.BLAST]: [WRAPPED_NATIVE_CURRENCY[ChainId.BLAST]!, USDB_BLAST],
+  [ChainId.NOVA_SEPOLIA]: [USDC_NOVA_SEPOLIA, DAI_NOVA_SEPOLIA],
 };
 
 class SubcategorySelectionPools<SubgraphPool> {

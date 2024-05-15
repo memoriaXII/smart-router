@@ -264,7 +264,6 @@ export abstract class BaseCommand extends Command {
       tokenListProvider,
       tokenProviderOnChain
     );
-    console.log(tokenCache, 'tokenCache');
 
     if (routerStr == 'legacy') {
       console.log('Initializing LegacyRouter');

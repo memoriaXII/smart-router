@@ -641,6 +641,7 @@ export class AlphaRouter
         case ChainId.SEPOLIA:
         case ChainId.MAINNET:
         case ChainId.POLYGON:
+          //TODO: Check nova sepolia on-chain quote provider configs
           this.onChainQuoteProvider = new OnChainQuoteProvider(
             chainId,
             provider,
@@ -661,7 +662,7 @@ export class AlphaRouter
             DEFAULT_BATCH_PARAMS,
             DEFAULT_GAS_ERROR_FAILURE_OVERRIDES,
             DEFAULT_SUCCESS_RATE_FAILURE_OVERRIDES,
-            DEFAULT_BLOCK_NUMBER_CONFIGS,
+            DEFAULT_BLOCK_NUMBER_CONFIGS
           );
           break;
       }
@@ -801,6 +802,8 @@ export class AlphaRouter
         new ArbitrumGasDataProvider(chainId, this.provider);
     }
 
+    console.log('ALPHA ROUTER PASSED', v3SubgraphProvider, this.chainId);
+
     // Initialize the Quoters.
     // Quoters are an abstraction encapsulating the business logic of fetching routes and quotes.
     this.v2Quoter = new V2Quoter(
@@ -850,6 +853,15 @@ export class AlphaRouter
       this.chainId
     )
   ): Promise<SwapToRatioResponse> {
+    console.log(
+      'ROUTE TO RATIO PASSED',
+      token0Balance,
+      token1Balance,
+      position,
+      swapAndAddConfig,
+      swapAndAddOptions,
+      routingConfig
+    );
     if (
       token1Balance.currency.wrapped.sortsBefore(token0Balance.currency.wrapped)
     ) {

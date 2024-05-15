@@ -348,7 +348,7 @@ export class LegacyRouter {
     });
 
     const pools = poolAccessor.getAllPools();
-    // console.log(11111111,pools)
+    console.log('it doesnt get any pools back', pools);
     //TODO: it doesnt get any pools back
 
     const routes: V3Route[] = this.computeAllRoutes(

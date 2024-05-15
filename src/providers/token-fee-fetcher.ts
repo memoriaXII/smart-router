@@ -30,6 +30,8 @@ export type TokenFeeResult = {
 };
 export type TokenFeeMap = Record<Address, TokenFeeResult>;
 
+// TDOO: monitor FeeDetector address
+
 // address at which the FeeDetector lens is deployed
 const FEE_DETECTOR_ADDRESS = (chainId: ChainId) => {
   switch (chainId) {

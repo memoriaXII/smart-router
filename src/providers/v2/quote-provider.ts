@@ -51,6 +51,7 @@ export class V2QuoteProvider implements IV2QuoteProvider {
     routes: V2Route[],
     providerConfig: ProviderConfig
   ): Promise<{ routesWithQuotes: V2RouteWithQuotes[] }> {
+    console.log('getQuotesManyExactIn', routes);
     return this.getQuotes(
       amountIns,
       routes,
@@ -64,6 +65,7 @@ export class V2QuoteProvider implements IV2QuoteProvider {
     routes: V2Route[],
     providerConfig: ProviderConfig
   ): Promise<{ routesWithQuotes: V2RouteWithQuotes[] }> {
+    console.log('getQuotesManyExactOut', routes);
     return this.getQuotes(
       amountOuts,
       routes,

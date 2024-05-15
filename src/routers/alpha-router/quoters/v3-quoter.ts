@@ -226,6 +226,8 @@ export class V3Quoter extends BaseQuoter<V3CandidatePools, V3Route> {
           v3PoolProvider: this.v3PoolProvider,
         });
 
+        console.log(routeWithValidQuote, 'routeWithValidQuote');
+
         routesWithValidQuotes.push(routeWithValidQuote);
       }
     }

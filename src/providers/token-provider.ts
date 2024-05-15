@@ -138,6 +138,21 @@ export const DAI_GOERLI = new Token(
   'DAI',
   'Dai Stablecoin'
 );
+export const DAI_NOVA_SEPOLIA = new Token(
+  ChainId.NOVA_SEPOLIA,
+  '0xDAfbaEFce3d04Cb7e0bcdA949A8d044006528e80',
+  18,
+  'DAI',
+  'DAI Token'
+);
+//0x61759317e2D6Ce05d79F35423b98B27efC15CE34
+export const USDC_NOVA_SEPOLIA = new Token(
+  ChainId.NOVA_SEPOLIA,
+  '0x5D6a5e542e7cE969c57e2d9aa05aD1766590bfb9',
+  6,
+  'USDC',
+  'USDC Token'
+);
 export const UNI_GOERLI = new Token(
   ChainId.GOERLI,
   '0x1f9840a85d5aF5bf1D1762F925BDADdC4201F984',
@@ -654,7 +669,15 @@ export const USDB_BLAST = new Token(
   18,
   'USDB',
   'USD Blast'
-)
+);
+
+export const UT3_NOVA_SEPOLIA = new Token(
+  ChainId.NOVA_SEPOLIA,
+  '0x2BD908aD5e9E531A27d92C296Bc6Cd871074FBF1',
+  18,
+  'UT3',
+  'UT3 Token'
+);
 
 export class TokenProvider implements ITokenProvider {
   constructor(
