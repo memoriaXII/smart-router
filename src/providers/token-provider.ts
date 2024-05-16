@@ -149,7 +149,7 @@ export const DAI_NOVA_SEPOLIA = new Token(
 export const USDC_NOVA_SEPOLIA = new Token(
   ChainId.NOVA_SEPOLIA,
   '0x5D6a5e542e7cE969c57e2d9aa05aD1766590bfb9',
-  6,
+  18,
   'USDC',
   'USDC Token'
 );
