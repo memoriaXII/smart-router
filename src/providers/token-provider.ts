@@ -884,6 +884,8 @@ export const DAI_ON = (chainId: ChainId): Token => {
       return DAI_BNB;
     case ChainId.AVALANCHE:
       return DAI_AVAX;
+    case ChainId.NOVA_SEPOLIA:
+      return DAI_NOVA_SEPOLIA;
     default:
       throw new Error(`Chain id: ${chainId} not supported`);
   }
@@ -946,6 +948,8 @@ export const USDC_ON = (chainId: ChainId): Token => {
       return USDC_BASE;
     case ChainId.BASE_GOERLI:
       return USDC_BASE_GOERLI;
+    case ChainId.NOVA_SEPOLIA:
+      return USDC_NOVA_SEPOLIA;
     default:
       throw new Error(`Chain id: ${chainId} not supported`);
   }
