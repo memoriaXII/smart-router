@@ -140,15 +140,14 @@ export const DAI_GOERLI = new Token(
 );
 export const DAI_NOVA_SEPOLIA = new Token(
   ChainId.NOVA_SEPOLIA,
-  '0xDAfbaEFce3d04Cb7e0bcdA949A8d044006528e80',
+  '0xC8afe2e5Cd64265499ca8Eab79CC5387D6c47A10',
   18,
   'DAI',
   'DAI Token'
 );
-//0x61759317e2D6Ce05d79F35423b98B27efC15CE34
 export const USDC_NOVA_SEPOLIA = new Token(
   ChainId.NOVA_SEPOLIA,
-  '0x5D6a5e542e7cE969c57e2d9aa05aD1766590bfb9',
+  '0x461fE851Cd66e82A274570ED5767c873bE9Ae1ff',
   18,
   'USDC',
   'USDC Token'
